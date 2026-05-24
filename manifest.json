@@ -1,0 +1,14 @@
+{
+    "name": "Geometry Dash Meltdown",
+    "short_name": "GD Meltdown",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "icons": [
+	  {
+        "src": "images/geometry-dash-meltdown.webp",
+        "sizes": "512x512",
+        "type": "image/webp"
+      }
+	]
+  }
