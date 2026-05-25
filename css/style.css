@@ -527,24 +527,13 @@ body {
 
 .feature-item {
     text-align: center;
-    padding: 30px 20px;
-    background: rgba(230, 36, 0, 0.1);
-    border: 1px solid var(--border-blue);
-    border-radius: 15px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(230, 36, 0, 0.2);
-    border-color: var(--accent-cyan);
+    margin-bottom: 30px;
 }
 
 .feature-item i {
-    font-size: 40px;
+    font-size: 32px;
     color: var(--accent-cyan);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: block;
 }
 
@@ -552,12 +541,12 @@ body {
     color: var(--text-white);
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .feature-item p {
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
 }
 
