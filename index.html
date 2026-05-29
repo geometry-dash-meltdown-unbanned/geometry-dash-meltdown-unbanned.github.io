@@ -232,7 +232,7 @@
                                 </div>
                                     
                                     <!-- Game Iframe -->
-                                    <iframe class="game-iframe" id="game-area" src="" width="100%" height="600" scrolling="none" frameborder="0" allowfullscreen title="Geometry Dash Meltdown" loading="lazy"></iframe>
+                                    <iframe class="game-iframe" id="game-area" src="" width="100%" height="600" scrolling="none" frameborder="0" allowfullscreen title="Geometry Dash Meltdown" loading="lazy" sandbox="allow-scripts allow-same-origin allow-fullscreen allow-modals"></iframe>
                                 </div>
                             </div>
 
@@ -421,79 +421,6 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
-    <script>
-        function customStartGame() {
-            document.getElementById('game-area').src = 'https://lolygames.github.io/gd-melt/';
-            document.getElementById('custom-play-overlay').style.display = 'none';
-        }
-        
-        function open_fullscreen() {
-            let game = document.getElementById("game-area");
-            if (game == null) return;
-            
-            if (!document.fullscreenElement && !document.mozFullScreenElement && 
-                !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                if (game.requestFullscreen) {
-                    game.requestFullscreen();
-                } else if (game.msRequestFullscreen) {
-                    game.msRequestFullscreen();
-                } else if (game.mozRequestFullScreen) {
-                    game.mozRequestFullScreen();
-                } else if (game.webkitRequestFullscreen) {
-                    game.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                }
-            }
-        }
-        
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-document.querySelector(this.getAttribute('href')).scrollIntoView({
-behavior: 'smooth'
-});
-});
-});
-
-function shareGame() {
-    if (navigator.share) {
-navigator.share({
-title: document.title,
-url: window.location.href
-});
-} else {
-navigator.clipboard.writeText(window.location.href);
-alert('Link copied to clipboard!');
-}
-}
-
-function refreshGame() {
-const gameArea = document.getElementById('game-area');
-if (gameArea.src && gameArea.src !== '') {
-gameArea.src = gameArea.src;
-} else {
-document.getElementById('custom-play-overlay').style.display = 'flex';
-gameArea.src = '';
-}
-}
-
-function toggleFavorite() {
-const btn = document.querySelector('button[title="Favorite"]');
-const icon = btn.querySelector('i');
-icon.classList.toggle('fas');
-icon.classList.toggle('far');
-}
-</script>
+    <script src="js/main.js"></script>
 </body>
 </html>
